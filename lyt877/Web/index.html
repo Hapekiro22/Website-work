@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎来到我的网站</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <span class="site-title">刘羽桐的网站</span>
+        <a href="#">首页</a>
+        <a href="#">关于</a>
+        <a href="#">服务</a>
+        <a href="#">联系</a>
+    </nav>
+    <div class="date-weather">
+        <div id="date"></div>
+        <div id="weather">天气: 晴</div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <a href="Self Intro.html" target="_blank">
+                <h2>个人简介</h2>
+            </a>
+        </div>
+        <div class="card">
+            <a href="Webpage Guide.html" target="_blank">
+                <h2>常用网页</h2>
+            </a>
+        </div>
+        <div class="card">
+            <a href="Game Intro.html" target="_blank">
+                <h2>游戏推荐</h2>
+            </a>
+        </div>
+        <div class="card">
+            <a href="School Intro.html" target="_blank">
+                <h2>学校介绍</h2>
+            </a>
+        </div>
+    </div>
+    <footer class="footer">
+        <span>欢迎来到我的网站</span>
+    </footer>
+    <script>
+        // 获取当前日期
+        const dateElement = document.getElementById('date');
+        const today = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        dateElement.textContent = today.toLocaleDateString('zh-CN', options);
+    </script>
+</body>
+</html>
