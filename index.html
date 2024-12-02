@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎来到我的网站</title>
+    <link rel="stylesheet" href="Web/styles.css">
+    <style>
+        .tooltip {
+            position: absolute;
+            background-color: white;
+            color: black;
+            padding: 5px 10px;  
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            pointer-events: none;
+            transform: translateY(-10px);
+        }
+        .tooltip.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <span class="site-title">刘羽桐的网站</span>
+        <a href="#">首页</a>
+        <a href="#" id="about">关于</a>
+        <a href="#">服务</a>
+        <a href="#" id="contact">联系</a>
+    </nav>
+    <div class="date-weather">
+        <div id="date"></div>
+        <div id="weather">天气: 晴</div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <a href="Web/Self Intro.html" target="_blank">
+                <h2>个人简介</h2>
+            </a>
+        </div>
+        <div class="card">
+            <a href="Web/Webpage Guide.html" target="_blank">
+                <h2>常用网页</h2>
+            </a>
+        </div>
+        <div class="card">
+            <a href="Web/Game Intro.html" target="_blank">
+                <h2>游戏推荐</h2>
+            </a>
+        </div>
+        <div class="card">
+            <a href="Web/School Intro.html" target="_blank">
+                <h2>学校介绍</h2>
+            </a>
+        </div>
+    </div>
+    <footer class="footer">
+        <span>欢迎来到我的网站</span>
+    </footer>
+    <div id="tooltip" class="tooltip"></div>
+    <script>
+        // 获取当前日期
+        const dateElement = document.getElementById('date');
+        const today = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        dateElement.textContent = today.toLocaleDateString('zh-CN', options);
+
+        // 显示提示文字
+        const aboutLink = document.getElementById('about');
+        const contactLink = document.getElementById('contact');
+        const tooltip = document.getElementById('tooltip');
+
+        aboutLink.addEventListener('mouseover', () => {
+            tooltip.textContent = '本网页新生实践网页作业展示';
+            tooltip.style.top = `${aboutLink.offsetTop + aboutLink.offsetHeight}px`;
+            tooltip.style.left = `${aboutLink.offsetLeft}px`;
+            tooltip.classList.add('show');
+        });
+
+        aboutLink.addEventListener('mouseout', () => {
+            tooltip.classList.remove('show');
+        });
+
+        contactLink.addEventListener('mouseover', () => {
+            tooltip.textContent = '邮箱：U202414877@hust.edu.cn';
+            tooltip.style.top = `${contactLink.offsetTop + contactLink.offsetHeight}px`;
+            tooltip.style.left = `${contactLink.offsetLeft}px`;
+            tooltip.classList.add('show');
+        });
+
+        contactLink.addEventListener('mouseout', () => {
+            tooltip.classList.remove('show');
+        });
+    </script>
+</body>
+</html>

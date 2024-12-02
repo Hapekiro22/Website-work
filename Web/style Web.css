@@ -1,0 +1,182 @@
+/* style Web.css */
+
+/* 基本样式 */
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../Image/Main\ Back.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+.header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.webpage-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.webpage-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    margin: 10px 0;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out; /* 添加过渡效果 */
+}
+
+.webpage-card:hover {
+    transform: scale(1.05); /* 鼠标悬停时放大 */
+}
+
+.webpage-card h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.webpage-card p {
+    color: #666;
+}
+
+.webpage-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.webpage-card a:hover {
+    background-color: #555;
+}
+
+.button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    background-color: #555;
+    transform: scale(1.1);
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleDown {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0.8);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.fade-out {
+    animation: fadeOut 1s ease-in-out;
+}
+
+.scale-up {
+    animation: scaleUp 0.5s ease-in-out;
+}
+
+.scale-down {
+    animation: scaleDown 0.5s ease-in-out;
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.slide-out {
+    animation: slideOut 0.5s ease-in-out;
+}
